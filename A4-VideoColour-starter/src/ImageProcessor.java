@@ -11,16 +11,16 @@ public interface ImageProcessor {
     //get the same color. add you own colors
     //or modify this as you see fit
     int[] COLORS = {
-            0x80AA80,
-            0xEEE8AA,
-            0xDC143C,
-            0xFF8C00,
-            0xCD5C5C,
-            0xFA8072,
-            0x808000,
-            0xFFD700,
-            0x6B8E23,
-            0xADFF2F};
+            0x80AA80, //green
+            0xEEE8AA, //yellow
+            0xDC143C, //red
+            0xFF8C00, //orange
+            0xCD5C5C, //reddish
+            0xFA8072, //more red
+            0x808000, //dark greenish
+            0xFFD700, //yellow
+            0x6B8E23, //dark green
+            0xADFF2F}; //light green
 
     //how closely two neighbouring pixels should be
     //to be considered the same component

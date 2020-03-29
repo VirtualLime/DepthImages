@@ -1,12 +1,27 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="c668ac2d-2ccb-47c1-88e6-d5c9cefa9a6e" name="Default Changelist" comment="" />
+    <list default="true" id="c668ac2d-2ccb-47c1-88e6-d5c9cefa9a6e" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/.idea/codeStyles/Project.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/dbnavigator.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/m/t.xy" beforeDir="false" afterPath="$PROJECT_DIR$/m/t.xy" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/A4-VideoColour/DepthImageProcessor.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/A4-VideoColour/DepthImageProcessor.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/A4-VideoColour/MyDisplay$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/A4-VideoColour/MyDisplay$1.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/A4-VideoColour/MyDisplay.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/A4-VideoColour/MyDisplay.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/DepthImageProcessor.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/DepthImageProcessor.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/ImageProcessor.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ImageProcessor.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/MyDisplay.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/MyDisplay.java" afterDir="false" />
+    </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="CoverageViewManager">
+    <option name="myElementSize" value="241" />
   </component>
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
@@ -16,14 +31,27 @@
       </list>
     </option>
   </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
+  </component>
   <component name="ProjectId" id="1ZOtPYNssOjmXy7xdj7NKU1drbk" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="PropertiesComponent">
     <property name="Downloaded.Files.Path.Enabled" value="false" />
+    <property name="GenerateAntBuildDialog.backupFiles" value="true" />
+    <property name="GenerateAntBuildDialog.enableUiFormCompile" value="true" />
+    <property name="GenerateAntBuildDialog.forceTargetJdk" value="true" />
+    <property name="GenerateAntBuildDialog.outputFileNameProperty" value="a4-videocolour-starter" />
     <property name="Repository.Attach.Annotations" value="false" />
     <property name="Repository.Attach.JavaDocs" value="false" />
     <property name="Repository.Attach.Sources" value="false" />
+    <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
-    <property name="settings.editor.selected.configurable" value="configurable.group.editor" />
+    <property name="project.structure.last.edited" value="Modules" />
+    <property name="project.structure.proportion" value="0.0" />
+    <property name="project.structure.side.proportion" value="0.0" />
+    <property name="restartRequiresConfirmation" value="false" />
+    <property name="settings.editor.selected.configurable" value="configurable.group.build" />
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
@@ -79,5 +107,29 @@
       <updated>1584721945448</updated>
     </task>
     <servers />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State>
+              <option name="COLUMN_ORDER" />
+            </State>
+          </value>
+        </entry>
+      </map>
+    </option>
+  </component>
+  <component name="XDebuggerManager">
+    <watches-manager>
+      <configuration name="Application">
+        <watch expression="((ConnectedComponents)this).id[9]" custom="ConnectedComponents" />
+        <watch expression="((ConnectedComponents)this).id" language="JAVA" custom="ConnectedComponents" />
+      </configuration>
+    </watches-manager>
+  </component>
+  <component name="com.intellij.coverage.CoverageDataManagerImpl">
+    <SUITE FILE_PATH="coverage/A4_VideoColour_starter$A1.ic" NAME="A1 Coverage Results" MODIFIED="1585129961337" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" />
   </component>
 </project>

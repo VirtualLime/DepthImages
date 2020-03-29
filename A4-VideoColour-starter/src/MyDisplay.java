@@ -154,7 +154,9 @@ public class MyDisplay
         {
             return;
         }
+        //String fileName = "m" + File.separator + "im0.xy";
         String fileName = "m" + File.separator + "im" + frm + ".xy";
+        //String fileName = "m" + File.separator + "t.xy";
         imgProcessor.processFile(fileName);
         updateImages(imgProcessor.getRawImg(), imgProcessor.getColorImg(), imgProcessor.getWidth(), imgProcessor.getHeight());
 
