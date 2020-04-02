@@ -2,17 +2,12 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="c668ac2d-2ccb-47c1-88e6-d5c9cefa9a6e" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/codeStyles/Project.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/dbnavigator.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/m/t.xy" beforeDir="false" afterPath="$PROJECT_DIR$/m/t.xy" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/A4-VideoColour/DepthImageProcessor.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/A4-VideoColour/DepthImageProcessor.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/A4-VideoColour/MyDisplay$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/A4-VideoColour/MyDisplay$1.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/A4-VideoColour/MyDisplay.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/A4-VideoColour/MyDisplay.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/ConnectedBlob.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ConnectedBlob.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/CurrentBlob.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/CurrentBlob.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/DepthImageProcessor.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/DepthImageProcessor.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/ImageProcessor.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ImageProcessor.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/MyDisplay.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/MyDisplay.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/SetBlobs.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/SetBlobs.java" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -106,6 +101,14 @@
       <option name="presentableId" value="Default" />
       <updated>1584721945448</updated>
     </task>
+    <task id="LOCAL-00001" summary="Committing a working model of the program. It still needs to be cleaned, and some comments need to be added, but it works, passes tests, and functions appropriately.">
+      <created>1585491659708</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1585491659708</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -120,6 +123,10 @@
         </entry>
       </map>
     </option>
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="Committing a working model of the program. It still needs to be cleaned, and some comments need to be added, but it works, passes tests, and functions appropriately." />
+    <option name="LAST_COMMIT_MESSAGE" value="Committing a working model of the program. It still needs to be cleaned, and some comments need to be added, but it works, passes tests, and functions appropriately." />
   </component>
   <component name="XDebuggerManager">
     <watches-manager>

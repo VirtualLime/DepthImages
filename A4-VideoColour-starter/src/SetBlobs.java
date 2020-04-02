@@ -1,4 +1,5 @@
 
+import java.awt.*;
 import java.util.ArrayList;
 
 /**
@@ -6,12 +7,13 @@ import java.util.ArrayList;
  * and applying the colour to the pixels
  */
 public class SetBlobs {
-    private ArrayList<Blob> blobs;
+    private ArrayList<Blob> blobs, oldBlobs;
+    private ArrayList<BlobInfo> blobInfo;
     private int[][] colourTable;
     private double[][] distanceTable;
     private CurrentBlob[][] blobTable;
     private double threshold, min, max;
-    private int width, height;
+    private int width, height, currentLabel;
 
     /**
      * The Constructor. After initializing variables, it sends out to a method to have the Blobs set.
@@ -23,10 +25,13 @@ public class SetBlobs {
      * @param minimum the minimum distance evaluated
      * @param maximum the maximum distance evaluated
      */
-    public SetBlobs(double[][]dTable, ArrayList<Blob> b, double t, int w, int h, double minimum, double maximum){
+    public SetBlobs(double[][]dTable, ArrayList<Blob> b, double t, int w, int h, double minimum,
+                    double maximum, ArrayList<BlobInfo> bInfo, ArrayList<Blob> oBlobs){
         min = minimum;
         max = maximum;
         blobs = b;
+        oldBlobs = oBlobs;
+        blobInfo = bInfo;
         blobs.clear();
         height = h;
         width = w;
@@ -34,7 +39,9 @@ public class SetBlobs {
         blobTable = new CurrentBlob[h][w];
         threshold  = t;
         colourTable = new int[height][width];
+        currentLabel = 1;
         setBlobs();
+        //adjustTables();
         //setColourTable();
     }
 
@@ -46,6 +53,7 @@ public class SetBlobs {
         setBlankBlobs();
         ConnectedBlob connectedBlob = new ConnectedBlob(blobTable,distanceTable,max,min,blobs,height,width,threshold);
         blobTable = connectedBlob.getBlobTable();
+        adjustTables();
 
         setColourTable();
         /*for(int i = 0; i < height; i++){
@@ -120,6 +128,67 @@ public class SetBlobs {
         }
         System.out.println("Height: " + height + " width: " + width + " Blobs total: " + blobs.size());
     */}
+
+    private void adjustTables(){
+        if(oldBlobs.size() > 0){
+            for(int i = 0; i < oldBlobs.size(); i++){
+                CurrentBlob b = (CurrentBlob)oldBlobs.get(i);
+                CurrentBlob blob = blobTable[(int)b.getCentroid().getY()][(int)b.getCentroid().getX()];
+                if (blob != null) {
+                    blob.setLabel(b.getLabel());
+                    if (b.getLabel() > currentLabel) {
+                        currentLabel = blob.getLabel() + 1;
+                        //blob.setColour();
+                    }
+                    blob.setColour(b.getColour());
+                    System.out.println("blob: " + i + " label: " + blob.getLabel() +
+                            " colour: " + blob.getColour() + " vs old colour: " + b.getColour());
+                }
+            }
+        }
+        //blobInfo.clear();
+        if(blobs.size()>0){
+            for(int i = 0; i < blobs.size(); i++){
+                CurrentBlob blob = (CurrentBlob) blobs.get(i);
+                if(blob.getLabel() == 0){
+                    blob.setLabel(currentLabel);
+                    //blob.setColour();
+                    currentLabel++;
+                }
+                Point p = blob.getCentroid();
+                BlobInfo info = new BlobInfo((int)p.getX(),(int)p.getY(),
+                        colourTable[(int)p.getY()][(int)p.getX()],blob.getLabel());
+                blobInfo.add(info);
+            }
+        }
+        /*if(blobInfo.size() > 0){
+            for(int i = 0; i < blobInfo.size(); i++){
+                BlobInfo bInfo = blobInfo.get(i);
+                CurrentBlob blob = blobTable[bInfo.getYValue()][bInfo.getXValue()];
+                if (blob != null) {
+                    blob.setLabel(bInfo.getLabel());
+                    if (bInfo.getLabel() > currentLabel) {
+                        currentLabel = bInfo.getLabel() + 1;
+                    }
+                    blob.setColour(bInfo.getColour());
+                }
+            }
+        }
+        blobInfo.clear();
+        if(blobs.size()>0){
+            for(int i = 0; i < blobs.size(); i++){
+                Blob blob = blobs.get(i);
+                if(blob.getLabel() == 0){
+                    blob.setLabel(currentLabel);
+                    currentLabel++;
+                }
+                Point p = blob.getCentroid();
+                BlobInfo info = new BlobInfo((int)p.getX(),(int)p.getY(),
+                        colourTable[(int)p.getY()][(int)p.getX()],blob.getLabel());
+                blobInfo.add(info);
+            }
+        }*/
+    }
 
     /**
      * A method to fill a blank table

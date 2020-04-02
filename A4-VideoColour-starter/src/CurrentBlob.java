@@ -33,6 +33,7 @@ public class CurrentBlob implements Blob {
      * @param t the threshold value
      */
     public CurrentBlob(double value, int x, int y, double t){
+        label = 0;
         p = new Point(x,y);
         min = value;
         max = value;
@@ -57,7 +58,8 @@ public class CurrentBlob implements Blob {
         return s;
     }
 
-    private int setColour(){return COLORS[(int)(Math.random()*10)];}
+    public int setColour(){return COLORS[(int)(Math.random()*10)];}
+    public void setColour(int c){colour = c;}
     public int getColour(){return colour;}
     //public boolean inRange(double value){return value <= min + threshold && value >= max - threshold;}
     //public boolean inRange(double value){return Math.abs(value-min) <= threshold && Math.abs(value-max)<= threshold;}

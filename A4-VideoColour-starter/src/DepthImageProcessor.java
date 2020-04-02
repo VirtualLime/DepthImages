@@ -12,6 +12,8 @@ public class DepthImageProcessor implements ImageProcessor{
     private double threshold;
     private int[][] converted;
     private ArrayList<Blob> blobs;
+    private ArrayList<Blob> oldBlobs;
+    private ArrayList<BlobInfo> blobInfo;
 
     private CurrentBlob[][] currentBlobTable;
     private SetBlobs setBlobs;
@@ -22,7 +24,9 @@ public class DepthImageProcessor implements ImageProcessor{
     //private double highestDistance, lowestDistance;
 
     public DepthImageProcessor(){
+        blobInfo = new ArrayList<BlobInfo>();
         blobs = new ArrayList<>();
+        oldBlobs = new ArrayList<>();
     }
 
 
@@ -67,7 +71,16 @@ public class DepthImageProcessor implements ImageProcessor{
         Processes a graph that takes width and height of each text file as well as a 2d double array of the distances
          */
         //processGraph(width, height, rawImg);
-        setBlobs = new SetBlobs(rawImg, blobs, threshold, width, height, minDistance, maxDistance);
+        oldBlobs.clear();
+        if(blobs.size()>0){
+            for(int i = 0; i < blobs.size(); i++){
+                oldBlobs.add(blobs.get(i));
+
+            }
+        }
+        setBlobs = new SetBlobs(rawImg, blobs, threshold, width, height, minDistance, maxDistance,
+                blobInfo, oldBlobs);
+        System.out.println("number of old blobs: " + oldBlobs.size());
         return rawImg;
     }
 
@@ -144,7 +157,7 @@ public class DepthImageProcessor implements ImageProcessor{
         //components.funnelColors(COLORS);
 
         //Assigns each group to its own color
-        Map<Integer, Integer> groupToColor = new HashMap<Integer, Integer>();
+        //Map<Integer, Integer> groupToColor = new HashMap<Integer, Integer>();
 
         //Assigns the map to the result of the assignment of the map in connected components
         //groupToColor = components.transformIntoColor();
@@ -157,8 +170,8 @@ public class DepthImageProcessor implements ImageProcessor{
 
         //Processes the connected components this is for the labels
         //int[] processArray = componentArray;
-        int x = 0;
-        int y = 0;
+        //int x = 0;
+        //int y = 0;
         //double[] times = new double[count];
         //double[] xStorage = new double[count];
         //double[] yStorage = new double[count];

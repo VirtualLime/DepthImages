@@ -14,7 +14,7 @@ public class ConnectedBlob {
     private ArrayList<Integer> xvalues, yvalues;
     private double max, min, threshold, rangedMax, rangedMin, currentMax, currentMin,
                     boundaryMax, boundaryMin;
-    private int width, height, count;
+    private int width, height;//, count;
 
     /**
      * This is the Constructor for Connected Blob. It accepts a number of variables and utilizes
@@ -43,7 +43,7 @@ public class ConnectedBlob {
         threshold = t;
         boundaryMax = 0;
         boundaryMin = 0;
-        count = 1;
+        //count = 1;
         checkBoundaries();
         setBlobs();
     }
@@ -91,8 +91,8 @@ public class ConnectedBlob {
                     //System.out.println("Is cb null? " + blob.getColour());
                     blobTable[i][m] = blob;
                     blobs.add(blob);
-                    blob.setLabel(count);
-                    count++;
+                    //blob.setLabel(count);
+                    //count++;
                     if(threshold > 0) {
                         Stack<Quad> stack = new Stack<Quad>();
                         xvalues.clear();
@@ -124,8 +124,8 @@ public class ConnectedBlob {
                         blob = new CurrentBlob(distances[i][m], m,i,threshold);
                         blobs.add(blob);
                         blobTable[i][m] = blob;
-                        blob.setLabel(count);
-                        count++;
+                        //blob.setLabel(count);
+                        //count++;
                     }
                     else{
                         blob.addSquare(m,i,distances[i][m]);
