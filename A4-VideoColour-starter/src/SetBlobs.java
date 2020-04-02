@@ -134,7 +134,9 @@ public class SetBlobs {
             for(int i = 0; i < oldBlobs.size(); i++){
                 CurrentBlob b = (CurrentBlob)oldBlobs.get(i);
                 CurrentBlob blob = blobTable[(int)b.getCentroid().getY()][(int)b.getCentroid().getX()];
-                if (blob != null) {
+                if (blob != null && Math.abs(Math.sqrt(Math.pow(b.getCentroid().getX(),2) +
+                        Math.pow(b.getCentroid().getY(),2)) - Math.sqrt(Math.pow(blob.getCentroid().getY(), 2) +
+                        Math.pow(blob.getCentroid().getX(), 2))) < 10) {
                     blob.setLabel(b.getLabel());
                     if (b.getLabel() > currentLabel) {
                         currentLabel = blob.getLabel() + 1;
