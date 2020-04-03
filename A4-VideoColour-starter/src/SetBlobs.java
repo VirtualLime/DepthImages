@@ -142,9 +142,9 @@ public class SetBlobs {
                         currentLabel = blob.getLabel() + 1;
                         //blob.setColour();
                     }
-                    blob.setColour(b.getColour());
+                    /*blob.setColour(b.getColour());
                     System.out.println("blob: " + i + " label: " + blob.getLabel() +
-                            " colour: " + blob.getColour() + " vs old colour: " + b.getColour());
+                            " colour: " + blob.getColour() + " vs old colour: " + b.getColour());*/
                 }
             }
         }

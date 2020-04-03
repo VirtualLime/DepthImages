@@ -2,6 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="c668ac2d-2ccb-47c1-88e6-d5c9cefa9a6e" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/CurrentBlob.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/CurrentBlob.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/SetBlobs.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/SetBlobs.java" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -117,7 +119,14 @@
       <option name="project" value="LOCAL" />
       <updated>1585861533006</updated>
     </task>
-    <option name="localTasksCounter" value="4" />
+    <task id="LOCAL-00004" summary="Made adjustments to the way old labels and colours were transferred. A few more adjustments and some cleaning still necessary. Program still works, but can be improved. Added a distance check. Now, it needs to be cleaned up.">
+      <created>1585862223490</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1585862223490</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -136,7 +145,8 @@
   <component name="VcsManagerConfiguration">
     <MESSAGE value="Committing a working model of the program. It still needs to be cleaned, and some comments need to be added, but it works, passes tests, and functions appropriately." />
     <MESSAGE value="Made adjustments to the way old labels and colours were transferred. A few more adjustments and some cleaning still necessary. Program still works, but can be improved." />
-    <option name="LAST_COMMIT_MESSAGE" value="Made adjustments to the way old labels and colours were transferred. A few more adjustments and some cleaning still necessary. Program still works, but can be improved." />
+    <MESSAGE value="Made adjustments to the way old labels and colours were transferred. A few more adjustments and some cleaning still necessary. Program still works, but can be improved. Added a distance check. Now, it needs to be cleaned up." />
+    <option name="LAST_COMMIT_MESSAGE" value="Made adjustments to the way old labels and colours were transferred. A few more adjustments and some cleaning still necessary. Program still works, but can be improved. Added a distance check. Now, it needs to be cleaned up." />
   </component>
   <component name="XDebuggerManager">
     <watches-manager>

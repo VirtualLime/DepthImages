@@ -58,7 +58,11 @@ public class CurrentBlob implements Blob {
         return s;
     }
 
-    public int setColour(){return COLORS[(int)(Math.random()*10)];}
+    public int setColour(){
+        //return COLORS[(int)(Math.random()*10)];
+        colour = COLORS[(label + 1)%10];
+        return colour;
+    }
     public void setColour(int c){colour = c;}
     public int getColour(){return colour;}
     //public boolean inRange(double value){return value <= min + threshold && value >= max - threshold;}
@@ -103,7 +107,10 @@ public class CurrentBlob implements Blob {
     }
 
     @Override
-    public void setLabel(int label) {this.label = label;}
+    public void setLabel(int label) {
+        this.label = label;
+        setColour();
+    }
 
     /**
      * An unused method... probably to be deleted
