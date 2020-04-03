@@ -1,18 +1,15 @@
 import java.awt.*;
-import java.sql.Array;
 import java.util.ArrayList;
 
 /**
- * The CurrentBob class. It implements Blob, but also adds methods helpful for
- * determining if points are within the Blob.
+ * The CurrentBob class. It implements Blob. It determines the centroid of the Blob, as well as
+ * the colour of the Blob (based on the label of the Blob).
  */
 public class CurrentBlob implements Blob {
     private ArrayList<Integer> xvalues, yvalues;
     private int  label, colour, averagex, averagey;
-    private double min,max,rangedMax,rangedMin;
-    private double threshold;
     private Point p;
-    private int[] COLORS = {
+    private int[] COLORS = {//Copied from Image Processor
             0x80AA80, //green
             0xEEE8AA, //yellow
             0xDC143C, //red
@@ -27,19 +24,12 @@ public class CurrentBlob implements Blob {
     /**
      * This is the Constructor for CurrentBlob. It accepts value, x, y, then adds the x and
      * y values to their arrayLists, and sets the colour for the Blob.
-     * @param value This is the distance for the pixel
      * @param x the x-coordinate of the pixel
      * @param y the y-coordinate of the pixel
-     * @param t the threshold value
      */
-    public CurrentBlob(double value, int x, int y, double t){
+    public CurrentBlob(int x, int y){
         label = 0;
         p = new Point(x,y);
-        min = value;
-        max = value;
-        threshold = t;
-        rangedMax = max + threshold;
-        rangedMin = min - threshold;
         xvalues = new ArrayList<>();
         yvalues = new ArrayList<>();
         xvalues.add(x);
@@ -48,63 +38,23 @@ public class CurrentBlob implements Blob {
     }
 
     /**
-     * A currently unused method to get the String of a single pixel's x and y
-     * @param index the position of the ArrayLists
-     * @return the pixel's location
+     * This sets the colour of the Blob based on the label value. Went with (label + 1)%10
+     * as the colour for label%10 was a bit bland for a colour that should constantly be there
+     * @return
      */
-    public String getXandYValues(int index){
-        String s = "";
-        s += xvalues.get(index) + yvalues.get(index);
-        return s;
-    }
-
     public int setColour(){
-        //return COLORS[(int)(Math.random()*10)];
         colour = COLORS[(label + 1)%10];
         return colour;
     }
+
     public void setColour(int c){colour = c;}
     public int getColour(){return colour;}
-    //public boolean inRange(double value){return value <= min + threshold && value >= max - threshold;}
-    //public boolean inRange(double value){return Math.abs(value-min) <= threshold && Math.abs(value-max)<= threshold;}
-
-    /**
-     * This method checks to see if the given value is within the accepted range
-     * by comparing it to the calculated current absolute max/min
-     * @param value the point distance being checked
-     * @return returns whether or not it is in range
-     */
-    public boolean inRange(double value) {//return value >= rangedMin && value <= rangedMax;}
-        if(value > rangedMax || value < rangedMin){
-            //System.out.println("rMax: " + rangedMax + " rMin: " + rangedMin + " value: " + value);
-            return false;
-
-        }
-        return true;
-    }
-
-    /**
-     * This method adjusts the max, min, ranged max, and rangedmin based on current
-     * values being added
-     * @param value
-     */
-    private void setExtremes(double value){
-        if(value > max){max = value;}
-        if(value < min){min = value;}
-        double buffer = threshold - (max - min);
-        rangedMax = max + buffer;
-        rangedMin = min - buffer;
-    }
 
     @Override
-    public Point getCentroid() {
-        return p;
-    }
+    public Point getCentroid() {return p;}
 
     @Override
-    public int getLabel() {
-        return label;
-    }
+    public int getLabel() {return label;}
 
     @Override
     public void setLabel(int label) {
@@ -113,30 +63,23 @@ public class CurrentBlob implements Blob {
     }
 
     /**
-     * An unused method... probably to be deleted
-     * @param x
-     * @param y
+     * This method takes a pixels coordinates and the distance being displayed, then sends
+     * out to adjust the Point
+     * @param x x-coordinate of the pixel
+     * @param y y-coordinate of the pixel
      */
-    public void setXandY(ArrayList x, ArrayList y){
-        xvalues = x;
-        yvalues = y;
+    public void addSquare(int x, int y){
+        xvalues.add(x);
+        yvalues.add(y);
         findP();
     }
 
     /**
-     * This method takes a pixels coordinates and the distance being displayed, adjusts the
-     * Point, and makes other adjustments to the interior values as necessary
-     * @param x x-coordinate of the pixel
-     * @param y y-coordinate of the pixel
-     * @param value distance value
+     * This method takes ArrayLists of x and y values, and adds them to the Class' ArrayLists
+     * then sends out to recalculate the Point
+     * @param x ArrayList of xvalues in
+     * @param y ArrayList of yvalues in
      */
-    public void addSquare(int x, int y, double value){
-        xvalues.add(x);
-        yvalues.add(y);
-        findP();
-        //setExtremes(value);
-    }
-
     public void addArrays(ArrayList<Integer> x, ArrayList<Integer> y){
         for(int i = 0; i < x.size(); i++){
             xvalues.add(x.get(i));
@@ -146,7 +89,7 @@ public class CurrentBlob implements Blob {
     }
 
     /**
-     * This method finds hte Point (where label will be afixed) for the Blob. It does this by
+     * This method finds the Point (where label will be afixed) for the Blob. It does this by
      * calculating the (int)(average) of the x and y coordinates
      */
     private void findP(){

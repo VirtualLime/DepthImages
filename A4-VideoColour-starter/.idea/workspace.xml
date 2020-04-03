@@ -3,7 +3,11 @@
   <component name="ChangeListManager">
     <list default="true" id="c668ac2d-2ccb-47c1-88e6-d5c9cefa9a6e" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/A4-VideoColour/DepthImageProcessor.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/A4-VideoColour/DepthImageProcessor.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/ConnectedBlob.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ConnectedBlob.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/CurrentBlob.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/CurrentBlob.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/DepthImageProcessor.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/DepthImageProcessor.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Quad.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Quad.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/SetBlobs.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/SetBlobs.java" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -126,7 +130,14 @@
       <option name="project" value="LOCAL" />
       <updated>1585862223490</updated>
     </task>
-    <option name="localTasksCounter" value="5" />
+    <task id="LOCAL-00005" summary="Changed the colour so that it is only dependent on the Blob's label. Now in the process of cleaning up.">
+      <created>1585919762128</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1585919762128</updated>
+    </task>
+    <option name="localTasksCounter" value="6" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -146,7 +157,8 @@
     <MESSAGE value="Committing a working model of the program. It still needs to be cleaned, and some comments need to be added, but it works, passes tests, and functions appropriately." />
     <MESSAGE value="Made adjustments to the way old labels and colours were transferred. A few more adjustments and some cleaning still necessary. Program still works, but can be improved." />
     <MESSAGE value="Made adjustments to the way old labels and colours were transferred. A few more adjustments and some cleaning still necessary. Program still works, but can be improved. Added a distance check. Now, it needs to be cleaned up." />
-    <option name="LAST_COMMIT_MESSAGE" value="Made adjustments to the way old labels and colours were transferred. A few more adjustments and some cleaning still necessary. Program still works, but can be improved. Added a distance check. Now, it needs to be cleaned up." />
+    <MESSAGE value="Changed the colour so that it is only dependent on the Blob's label. Now in the process of cleaning up." />
+    <option name="LAST_COMMIT_MESSAGE" value="Changed the colour so that it is only dependent on the Blob's label. Now in the process of cleaning up." />
   </component>
   <component name="XDebuggerManager">
     <watches-manager>
